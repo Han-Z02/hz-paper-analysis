@@ -5,7 +5,7 @@
 ## 第一次安装
 
 1. 安装 [Node.js](https://nodejs.org/) 20 或更新版本，选择 LTS 版即可。
-2. 打开终端：Windows 搜索并打开“PowerShell”；Mac 打开“终端”。复制下面整行，粘贴后按回车：
+2. 打开终端：Windows 同时按下 `Win + R`，输入 `PowerShell` 并按回车；Mac 打开“终端”。然后复制下面整行，粘贴后按回车：
 
 ```bash
 npx --yes skills add https://github.com/Han-Z02/hz-paper-analysis/tree/main/skills/hz-paper-analysis -g -a codex --copy -y
