@@ -1,0 +1,4 @@
+interface:
+  display_name: "HZ Paper Analysis"
+  short_description: "Figure-by-figure biomedical paper analysis with evidence grading"
+  default_prompt: "Use $hz-paper-analysis to analyze this biomedical paper figure by figure and separate evidence from interpretation."

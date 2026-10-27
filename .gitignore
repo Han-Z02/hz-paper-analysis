@@ -1,0 +1,5 @@
+# Generated reading outputs and local paper sources
+paper-analysis/
+*.pdf
+.env
+.env.*
