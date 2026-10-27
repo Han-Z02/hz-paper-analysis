@@ -2,11 +2,12 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { marked } from './vendor/marked.mjs';
 
 const WORKING_ROOT = process.cwd();
-const GENERATOR_VERSION = '1.2.0';
+const GENERATOR_VERSION = '1.2.1';
 const SKIP_DIRS = new Set([
   '.git', '.obsidian', '.claude', '.codex', '.agents', '.copilot',
   '.opencode', 'node_modules', 'attachments', 'assets', '__pycache__'
@@ -504,6 +505,7 @@ function buildHtml({ sourceFile, html, headings, frontmatter, raw }) {
     '<meta name="color-scheme" content="light dark">',
     '<link rel="icon" href="data:,">',
     '<meta name="generator" content="hz-paper-analysis-html ' + GENERATOR_VERSION + '">',
+    '<meta name="hz-paper-source-sha256" content="' + createHash('sha256').update(raw.replace(/\r\n/g, '\n'), 'utf8').digest('hex') + '">',
     '<title>' + escapeHtml(title.primary) + '</title>',
     '<style>' + baseCss() + '</style>',
     '</head>',
